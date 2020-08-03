@@ -4,26 +4,46 @@ class CounterGroup extends React.Component{
     constructor(props){
 		super(props);
 		this.state = {
-			inpValu:1
+            inpValu:1,
+            total:0
 		}
 	}
 	
-	handelChange(e){
-        console.log(typeof e.target.value)
+	handleChange(e){
 		this.setState({
-			inpValu:e.target.value
+            inpValu:e.target.value,
+            total:0,  
         })
-        
-	}
+        this.refs.counters.clear();
+    }
+
+    handleIncrease=()=>{
+		this.setState((prevState)=>{
+			return{
+                total: prevState.total+1
+            }
+        }) 
+    }
+
+    handleDecrease=()=>{
+		this.setState((prevState)=>{
+			return{
+                total: prevState.total-1
+            }
+        })  
+    }
+    
     render(){
         return(
             <div>
-            <input type="text" onChange={this.handelChange.bind(this)} defaultValue={this.state.inpValu}/>
-                <div >
-                    {new Array(Number(this.state.inpValu)).fill(0).map((value,index) => <Counter key={index}/>)}
-                </div>
+                <p>number of counters:<input type="text" onChange={this.handleChange.bind(this)} defaultValue={this.state.inpValu}/></p>
+                <div>{new Array(Number(this.state.inpValu)).fill(0).map((value,index) =>
+                 <Counter ref="counters" key={index}  increase={this.handleIncrease} decrease={this.handleDecrease}/>)}</div>
+                 <p>total:{this.state.total} </p>
             </div>
         ) 
     }
+    
 }
+
 export default CounterGroup;

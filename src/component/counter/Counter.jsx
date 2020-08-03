@@ -9,13 +9,22 @@ class Counter extends React.Component{
             count:0
         }
     }
+    
+    clear(){
+        if(this.state.count!=0){
+            this.setState({count:0})
+        }
+        
+    }
 
     countAdd(){
         this.state.count++;
+        this.props.increase();
         this.setState({count:this.state.count})
     }
     countSub(){
         this.state.count--;
+        this.props.decrease();
         this.setState({count:this.state.count})
     }
 
@@ -36,5 +45,6 @@ class Counter extends React.Component{
             </div>
         ) 
     }
+    
 }
 export default Counter;
