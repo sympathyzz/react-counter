@@ -4,8 +4,8 @@ import CounterGroup from '../components/CounterGroup'
 
 const mapStateToProps = (state) => {
     return {
-        total: state.total,
-        number: state.number
+        total: state.counterGroup.total,
+        number: state.counterGroup.number
     }
 }
 
