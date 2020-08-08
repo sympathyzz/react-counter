@@ -2,13 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
-import CounterGroup from './components/CounterGroup/index'
+import CounterGroupContainer from './containers/counterGroupContainer'
 import reducers from './reducers/index'
 
 const store = createStore(reducers)
 ReactDOM.render(
     <Provider store={store}>
-        <CounterGroup></CounterGroup>
+        <CounterGroupContainer></CounterGroupContainer>
     </Provider>
     , document.getElementById('root')
 );
