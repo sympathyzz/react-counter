@@ -26,7 +26,9 @@ class CounterGroup extends React.Component {
 
     render() {
         return (
-            <div>
+            <div style={{
+                textAlign:"center"
+            }}>
                 <p>Number of Counters: <input type="number" onChange={this.updateNumberOfCounters} /></p>
                 <div>
                     {new Array(Number(this.state.numberOfCounters)).fill(0).map((item, index) => {

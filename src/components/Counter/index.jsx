@@ -35,7 +35,11 @@ class Counter extends React.Component {
         return (
             <div>
                 <button onClick={this.increase}>+</button>
-                <mark>{this.state.count}</mark>
+                <mark style={{
+                    display:"inline-block",
+                    textAlign:"center",
+                    width:50
+                    }}>{this.state.count}</mark>
                 <button onClick={this.reduce}>-</button>
             </div>
         )
