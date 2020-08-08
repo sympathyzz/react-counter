@@ -2,12 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
-import GroupCounter from './components/GroupCounter/index'
+import CounterGroup from './components/CounterGroup/index'
 
 const store = createStore(reducers)
 ReactDOM.render(
     <Provider store={store}>
-        <GroupCounter></GroupCounter>
+        <CounterGroup></CounterGroup>
     </Provider>
     , document.getElementById('root')
 );

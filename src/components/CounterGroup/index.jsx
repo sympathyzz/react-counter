@@ -1,7 +1,7 @@
 import React from "react"
 import Counter from "../Counter"
 
-class GroupCounter extends React.Component {
+class CounterGroup extends React.Component {
 
     constructor(props) {
         super(props)
@@ -40,4 +40,4 @@ class GroupCounter extends React.Component {
     }
 
 }
-export default GroupCounter
+export default CounterGroup
